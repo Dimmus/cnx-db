@@ -287,9 +287,8 @@ AS $$
 $$ LANGUAGE plpythonu;
 
 CREATE TRIGGER module_file_added
-  AFTER INSERT ON module_files FOR EACH ROW
+  AFTER INSERT ON module_files FOR EACH ROW WHEN ( new.filename = 'index.cnxml' )
   EXECUTE PROCEDURE add_module_file();
-
 
 
 
