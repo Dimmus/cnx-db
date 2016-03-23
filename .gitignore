@@ -19,6 +19,7 @@ include
 build/
 dist/
 .eggs/
+docs/_build
 
 # Coverage #
 ############
