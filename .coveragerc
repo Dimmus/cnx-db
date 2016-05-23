@@ -1,0 +1,9 @@
+[run]
+omit =
+  cnxdb/tests/*
+
+[report]
+omit =
+  cnxdb/tests/*
+exclude_lines =
+  pragma: no cover
