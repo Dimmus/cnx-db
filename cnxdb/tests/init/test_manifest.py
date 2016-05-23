@@ -21,4 +21,4 @@ def test_get_schema():
     for i, file in enumerate(get_schema(example_schema_dir)):
         abs_filepath = os.path.abspath(os.path.join(example_schema_dir,
                                                     file_series[i]))
-        assert '-- FILE: {0}'.format(abs_filepath) in file
+        assert '-- FILE: {0}'.format(abs_filepath).encode('utf-8') in file

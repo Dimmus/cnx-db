@@ -13,8 +13,8 @@ SCHEMA_MANIFEST_FILENAME = 'manifest.json'
 
 
 def _read_schema_manifest(manifest_filepath):
-    with open(os.path.abspath(manifest_filepath), 'rb') as fp:
-        raw_manifest = json.loads(fp.read())
+    with open(os.path.abspath(manifest_filepath), 'r') as fp:
+        raw_manifest = json.load(fp)
     manifest = []
     relative_dir = os.path.abspath(os.path.dirname(manifest_filepath))
     for item in raw_manifest:
@@ -43,7 +43,7 @@ def _compile_manifest(manifest, content_modifier=None):
         if isinstance(item, list):
             items.extend(_compile_manifest(item, content_modifier))
         else:
-            with open(item, 'rb') as fp:
+            with open(item, 'r') as fp:
                 content = fp.read()
             if content_modifier:
                 content = content_modifier(item, content)
@@ -59,7 +59,7 @@ def get_schema(schema_directory):
 
     # Modify the file so that it contains comments that say it's origin.
     def file_wrapper(f, c):
-        return u"-- FILE: {0}\n{1}\n-- \n".format(f, c)
+        return "-- FILE: {0}\n{1}\n-- \n".format(f, c).encode('utf-8')
 
     return _compile_manifest(schema_manifest, file_wrapper)
 
