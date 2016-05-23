@@ -40,9 +40,11 @@ Usage
 
 Initialize an database::
 
-    cnx-db init <app-config>.ini
+    cnx-archive-initdb <app-config>.ini
 
 Replace ``<app-config>.ini`` with the application configuration file.
+
+.. todo:: Deprecate ``cnx-archive-initdb`` in favor of ``cnx-db init ...``.
 
 .. todo:: This may become part of ``dbmigrator init`` or ``dbmigrator migrate``
           in the future.
