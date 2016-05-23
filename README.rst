@@ -11,42 +11,8 @@ Connexions Database Library
 .. image:: https://badge.fury.io/py/cnx-db.svg
    :target: http://badge.fury.io/py/cnx-db
 
-Installation
-------------
-
-Install using one of the following methods (run within the project root)::
-
-    python setup.py install
-
-Or::
-
-    pip install .
-
-Usage
------
-
-Initialize an database::
-
-    cnx-db init <app-config>.ini
-
-Replace ``<app-config>.ini`` with the application configuration file.
-
-.. todo:: This may become part of ``dbmigrator init`` or ``dbmigrator migrate``
-          in the future.
-
-Testing
--------
-
-The tests require access to a blank database named ``cnxarchive-testing``
-with the user ``cnxarchive`` and password ``cnxarchive``. This can easily
-be created using the following commands::
-
-    psql -c "CREATE USER cnxarchive WITH SUPERUSER PASSWORD 'cnxarchive';"
-    createdb -O cnxarchive cnxarchive-testing
-
-The tests can then be run using::
-
-    python setup.py test
+View the `documentation <http://cnx-db.readthedocs.io/en/latest/>`_
+on the Read the Docs site.
 
 License
 -------
