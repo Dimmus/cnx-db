@@ -18,6 +18,7 @@ def db_wipe(connection_string, request):
     def finalize():
         with psycopg2.connect(connection_string) as conn:
             with conn.cursor() as cursor:
-                cursor.execute("drop schema public cascade; "
-                               "create schema public")
+                cursor.execute("DROP SCHEMA public CASCADE; "
+                               "CREATE SCHEMA public")
+                cursor.execute("DROP SCHEMA IF EXISTS venv CASCADE")
     request.addfinalizer(finalize)

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import functools
 import os
+import sys
 
 import psycopg2
 
@@ -52,8 +53,17 @@ def db_connect(method):
     return wrapped
 
 
+def is_venv():
+    """Returns a boolean telling whether the application is running
+    within a virtualenv (aka venv).
+
+    """
+    return hasattr(sys, 'real_prefix')
+
+
 __all__ = (
     'db_connect',
     'db_connection_factory',
     'get_connection_string',
+    'is_venv',
     )
