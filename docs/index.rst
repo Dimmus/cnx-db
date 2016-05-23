@@ -52,16 +52,20 @@ Replace ``<app-config>.ini`` with the application configuration file.
 Testing
 -------
 
-The tests require access to a blank database named ``cnxarchive-testing``
-with the user ``cnxarchive`` and password ``cnxarchive``. This can easily
+The tests require access to a blank database named ``testing``
+with the user ``tester`` and password ``tester``. This can easily
 be created using the following commands::
 
-    psql -c "CREATE USER cnxarchive WITH SUPERUSER PASSWORD 'cnxarchive';"
-    createdb -O cnxarchive cnxarchive-testing
+    psql -c "CREATE USER tester WITH SUPERUSER PASSWORD 'tester';"
+    createdb -O tester testing
 
 The tests can then be run using::
 
     python setup.py test
+
+Or::
+
+    py.test
 
 License
 -------
