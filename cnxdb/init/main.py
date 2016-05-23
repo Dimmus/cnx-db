@@ -91,7 +91,7 @@ def init_venv(connection_string):
                     cursor.execute("ALTER DATABASE \"{}\" SET "
                                    "session_preload_libraries ="
                                    "'session_exec'".format(db_name))
-                except psycopg2.ProgrammingError, e:  # pragma: no cover
+                except psycopg2.ProgrammingError as e:  # pragma: no cover
                     if e.message.startswith(
                             'unrecognized configuration parameter'):
 
@@ -109,8 +109,8 @@ def init_venv(connection_string):
                                "SET session_exec.login_name = "
                                "'venv.activate_venv'"
                                .format(db_name))
-                sql = ACTIVATE_VENV_SQL_FUNCTION \
-                      .format(activate_path=activate_path)
+                sql = ACTIVATE_VENV_SQL_FUNCTION.format(
+                    activate_path=activate_path)
                 cursor.execute(sql)
 
 
