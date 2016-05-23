@@ -65,7 +65,13 @@ The tests can then be run using::
 
 Or::
 
+    pip install pytest  # only run once to install dependency
     py.test
+
+Or, to run multiple versions of python::
+
+    pip install tox  # only run once to install dependency
+    tox
 
 License
 -------
