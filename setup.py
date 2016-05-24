@@ -17,7 +17,14 @@ tests_require = [
 extras_require = {
     'test': tests_require,
     }
-description = ""
+description = "Connexions Database Library"
+with open('README.rst', 'r') as readme, \
+     open('docs/changes.rst', 'r') as changes:
+    long_description = '\n'.join([
+        readme.read(),
+        "==========\nChange Log\n==========",
+        changes.read(),
+    ])
 
 if not IS_PY3:
     tests_require.append('mock==1.0.1')
@@ -30,6 +37,7 @@ setup(
     url="https://github.com/connexions/cnx-db",
     license='LGPL, See also LICENSE.txt',
     description=description,
+    long_description=long_description,
     setup_requires=setup_requires,
     install_requires=install_requires,
     tests_require=tests_require,
