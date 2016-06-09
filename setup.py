@@ -46,7 +46,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        'cnxdb': ['*-sql/*.sql', '*-sql/**/*.sql'],
+        'cnxdb': ['*-sql/*.sql', '*-sql/**/*.sql', 'schema/*.json'],
         'cnxdb.tests': ['data/init/**/*.*'],
         },
     entry_points="""\
