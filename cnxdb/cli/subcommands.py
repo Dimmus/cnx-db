@@ -2,7 +2,6 @@
 """cnx-db subcommands"""
 from __future__ import print_function
 import sys
-from functools import reduce
 
 from .common import assign_db_args
 from .discovery import register_subcommand
@@ -24,10 +23,9 @@ def _compile_connection_string_parts(args_namespace):
 
 def _translate_parts_to_string(connection_string_parts):
     """Translate the connection string parts ot a string"""
-    return reduce(
-        lambda x, y: ' '.join([x, y]),
-        ['='.join(x) for x in connection_string_parts.items()
-         if x[1] is not None])
+    return ' '.join(['='.join([k, v])
+                     for k, v in connection_string_parts.items()
+                     if v is not None])
 
 
 @register_subcommand('init', *assign_db_args)
