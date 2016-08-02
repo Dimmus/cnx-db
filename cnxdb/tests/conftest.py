@@ -31,7 +31,13 @@ def db_wipe(connection_string, request):
 
 
 @pytest.fixture
-def db_init(connection_string, request):
+def db_init(connection_string):
     """Initializes the database"""
     from cnxdb.init.main import init_db
     init_db(connection_string, True)
+
+
+@pytest.fixture
+def db_init_and_wipe(db_init, db_wipe):
+    """Combination of the initialization and wiping procedures."""
+    pass

@@ -17,7 +17,8 @@ def _translate_parts_to_args(parts):
             ]
 
 
-def test_init(connection_string_parts, db_wipe):
+@pytest.mark.usefixtures('db_wipe')
+def test_init(connection_string_parts):
     from cnxdb.cli.main import main
     args = ['init'] + _translate_parts_to_args(connection_string_parts)
     return_code = main(args)
@@ -40,7 +41,8 @@ def test_init(connection_string_parts, db_wipe):
     assert 'pending_documents' in tables
 
 
-def test_init_called_twice(capsys, connection_string_parts, db_wipe):
+@pytest.mark.usefixtures('db_wipe')
+def test_init_called_twice(capsys, connection_string_parts):
     from cnxdb.cli.main import main
     args = ['init'] + _translate_parts_to_args(connection_string_parts)
 
@@ -55,7 +57,8 @@ def test_init_called_twice(capsys, connection_string_parts, db_wipe):
 
 @pytest.mark.skipif(not testing.is_db_local(),
                     reason="not testing against a local database")
-def test_init_local(connection_string_parts, db_wipe):
+@pytest.mark.usefixtures('db_wipe')
+def test_init_local(connection_string_parts):
     from cnxdb.cli.main import main
     args = ['init'] + _translate_parts_to_args(connection_string_parts)[4:]
 
@@ -63,7 +66,8 @@ def test_init_local(connection_string_parts, db_wipe):
     assert return_code == 0
 
 
-def test_init_without_dbname(connection_string_parts, db_wipe):
+@pytest.mark.usefixtures('db_wipe')
+def test_init_without_dbname(connection_string_parts):
     from cnxdb.cli.main import main
     args = ['init']
     args.extend(_translate_parts_to_args(connection_string_parts)[:4])
@@ -74,7 +78,8 @@ def test_init_without_dbname(connection_string_parts, db_wipe):
     assert exc_info.value.code == 2
 
 
-def test_init_without_user(connection_string_parts, db_wipe):
+@pytest.mark.usefixtures('db_wipe')
+def test_init_without_user(connection_string_parts):
     from cnxdb.cli.main import main
     args = ['init'] + _translate_parts_to_args(connection_string_parts)[:6]
 
@@ -97,7 +102,8 @@ def assert_venv_is_active(connection_string_parts):
 
 
 @pytest.mark.skipif(not testing.is_venv(), reason="not within a venv")
-def test_venv(connection_string_parts, db_init, db_wipe):
+@pytest.mark.usefixtures('db_init_and_wipe')
+def test_venv(connection_string_parts):
     # Remove the venv schema before trying to initialize it.
     with psycopg2.connect(**connection_string_parts) as conn:
         with conn.cursor() as cursor:
@@ -113,7 +119,8 @@ def test_venv(connection_string_parts, db_init, db_wipe):
 
 
 @pytest.mark.skipif(not testing.is_venv(), reason="not within a venv")
-def test_venv_called_twice(connection_string_parts, db_init, db_wipe):
+@pytest.mark.usefixtures('db_init_and_wipe')
+def test_venv_called_twice(connection_string_parts):
     # Note, the initialization already setup the venv,
     # so this really calles 3 times.
     from cnxdb.cli.main import main
