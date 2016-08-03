@@ -6,6 +6,13 @@
 
    - feature message
 
+0.2.0
+-----
+
+- Add a commandline interface for initializing the database.
+- Add a commandline interface for initializing or re-initializing
+  the virtualenv within the database.
+
 0.1.1
 -----
 
