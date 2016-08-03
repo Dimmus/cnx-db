@@ -6,6 +6,12 @@
 
    - feature message
 
+0.1.1
+-----
+
+- Update SQL to account for changes made in the cnx-publishing
+  and cnx-archive projects.
+
 0.1.0
 -----
 
