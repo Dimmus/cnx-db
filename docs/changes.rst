@@ -6,6 +6,13 @@
 
    - feature message
 
+0.2.1
+-----
+
+- Update SQL to account for changes in the cnx-publishing
+  and cnx-archive projects.
+- Fix to include schema files in the distribution.
+
 0.2.0
 -----
 
