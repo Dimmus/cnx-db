@@ -32,7 +32,7 @@ if not IS_PY3:
 
 setup(
     name='cnx-db',
-    version='0.2.1',
+    version='0.2.2',
     author='Connexions team',
     author_email='info@cnx.org',
     url="https://github.com/connexions/cnx-db",
