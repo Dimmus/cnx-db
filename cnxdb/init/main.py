@@ -105,7 +105,6 @@ def init_venv(connection_string):
         if _is_localhost_connection(db_connection):  # pragma: no cover
             warnings.warn("An attempt to use ``init_venv`` was made, "
                           "but not on the same host as the postgres service.")
-            return
         with db_connection.cursor() as cursor:
             cursor.execute("SELECT current_database();")
             db_name = cursor.fetchone()[0]
