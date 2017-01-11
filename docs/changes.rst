@@ -6,6 +6,11 @@
 
    - feature message
 
+0.2.3
+-----
+
+- Remove localhost venv initialization constraint.
+
 0.2.2
 -----
 
