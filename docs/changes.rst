@@ -6,6 +6,12 @@
 
    - feature message
 
+
+0.2.4
+-----
+
+- Update SQL to include collated schema changes from cnx-archive.
+
 0.2.3
 -----
 
