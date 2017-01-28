@@ -5,8 +5,8 @@ Connexions Database Library
 .. image:: https://travis-ci.org/Connexions/cnx-db.svg
    :target: https://travis-ci.org/Connexions/cnx-db
 
-.. image:: https://coveralls.io/repos/Connexions/cnx-db/badge.png?branch=master
-   :target: https://coveralls.io/r/Connexions/cnx-db?branch=master
+.. image:: https://img.shields.io/codecov/c/github/Connexions/cnx-db.svg
+   :target: https://codecov.io/gh/Connexions/cnx-db
 
 .. image:: https://badge.fury.io/py/cnx-db.svg
    :target: http://badge.fury.io/py/cnx-db
