@@ -69,7 +69,7 @@ UNION ALL
     WHERE not nodeid = any (t.path) AND t.is_collated = c1.is_collated
 )
 SELECT
-    REPEAT('    ', depth - 1) || 
+    REPEAT('    ', depth - 1) ||
     '{"id":"' || COALESCE(m.uuid::text,'subcol') || concat_ws('.','@'||m.major_version, m.minor_version) ||'",' ||
     '"shortId":"' || COALESCE(short_id(m.uuid),'subcol') || concat_ws('.','@'||m.major_version, m.minor_version) ||'",' ||
       '"title":'||to_json(COALESCE(title,name))||
@@ -249,7 +249,7 @@ UNION ALL
     WHERE not nodeid = any (t.path) AND t.is_collated = c1.is_collated
 )
 SELECT
-    REPEAT('    ', depth - 1) || 
+    REPEAT('    ', depth - 1) ||
     '{"id":"' || COALESCE(m.uuid::text,'subcol') ||concat_ws('.', '@'||m.major_version, m.minor_version) ||'",' ||
     '"shortId":"' || COALESCE(short_id(m.uuid),'subcol') ||concat_ws('.', '@'||m.major_version, m.minor_version) ||'",' ||
       '"title":'||to_json(COALESCE(title,name))||
