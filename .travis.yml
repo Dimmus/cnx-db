@@ -5,9 +5,9 @@ python:
 addons:
   postgresql: "9.4"
 before_install:
-  - pip install pep8
-  - pep8 --exclude=tests *.py cnxdb
-  - pep8 --max-line-length=200 cnxdb/tests
+  - pip install pycodestyle
+  - pycodestyle --exclude=tests,migrations *.py cnxdb
+  - pycodestyle --max-line-length=200 cnxdb/tests cnxdb/migrations
 
   - sudo apt-get update
   # remove zope.interface installed from aptitude
