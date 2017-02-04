@@ -53,5 +53,7 @@ setup(
     entry_points="""\
     [console_scripts]
     cnx-db = cnxdb.cli.main:main
+    [dbmigrator]
+    migrations_directory = cnxdb:migrations
     """,
     )
