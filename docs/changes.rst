@@ -6,6 +6,10 @@
 
    - feature message
 
+0.2.5
+-----
+
+- Make the project db-migrator aware.
 
 0.2.4
 -----
