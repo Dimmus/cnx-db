@@ -6,6 +6,11 @@
 
    - feature message
 
+0.2.6
+-----
+
+- Update SQL to include sub-collection uuid schema changes from cnx-archive.
+
 0.2.5
 -----
 
