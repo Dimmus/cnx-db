@@ -6,6 +6,11 @@
 
    - feature message
 
+0.2.7
+-----
+
+- Fix a relative path within the sub-collection uuid migration.
+
 0.2.6
 -----
 
