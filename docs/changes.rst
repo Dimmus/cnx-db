@@ -6,6 +6,12 @@
 
    - feature message
 
+0.3.0
+-----
+
+- Adjust SQL functions declarations to idempotent declarations.
+- Add SQL functions and indexes for the content ident-hash.
+
 0.2.7
 -----
 
